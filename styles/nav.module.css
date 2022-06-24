@@ -6,6 +6,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 4rem;
+  z-index: 99;
 }
 .SiteNameContainer {
   display: flex;
@@ -44,4 +45,9 @@
   padding: 1rem;
   width: 32%;
   text-align: center;
+  color: #b6b6b6;
+}
+
+.links p:hover {
+  color: #ff7777;
 }
