@@ -1,11 +1,44 @@
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
-import styles from "../../styles/Home.module.css";
+import { GraphQLClient, gql } from "graphql-request";
+import BlogList from "../modules/BlogContent/BlogList";
 import Hero from "../modules/Hero/Hero";
 import Nav from "../modules/Nav/Nav";
 
-const Home: NextPage = () => {
+export const getStaticProps: GetStaticProps = async () => {
+  // GraphCms
+  const graphcms = new GraphQLClient(
+    "https://api-ap-northeast-1.graphcms.com/v2/cl4m6kpla7bry01xv5pop3nrl/master"
+  );
+  const QUERY = gql`
+    {
+      posts {
+        title
+        datePublished
+        slug
+        author {
+          name
+          avatar {
+            url
+          }
+        }
+        content {
+          html
+        }
+        coverPhoto {
+          url
+        }
+      }
+    }
+  `;
+  const { posts } = await graphcms.request(QUERY);
+  return {
+    props: { posts },
+    revalidate: 10,
+  };
+};
+
+const Home: NextPage = ({ posts }: any) => {
   return (
     <div>
       <Head>
@@ -16,6 +49,7 @@ const Home: NextPage = () => {
       <main>
         <Nav />
         <Hero />
+        <BlogList Posts={posts} />
       </main>
     </div>
   );

@@ -1,0 +1,83 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 4rem;
+  align-items: center;
+  padding: 4rem 0 0 0;
+}
+
+.blogContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  height: 400px;
+}
+
+.coverPhotoContainer {
+  width: 40%;
+  height: 100%;
+}
+
+.coverPhotoContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blogDetailsContainer {
+  width: 58%;
+  height: 100%;
+  position: relative;
+}
+
+.blogDetailsContainer h3 {
+  cursor: pointer;
+}
+
+.blogDetailsContainer h3:hover {
+  text-decoration: underline;
+}
+
+.blogDetailsContainer h2,
+.blogDetailsContainer h3 {
+  font-family: "Oxygen";
+  color: #ff7777;
+}
+
+.blogDetailsContainer p {
+  font-family: "Oxygen";
+  color: #b6b6b6;
+}
+
+.blogContent {
+  margin: 2rem 0 0 0;
+  font-family: "Oxygen";
+  color: #b6b6b6;
+  width: 100%;
+  border: 2px solid magenta;
+  white-space: wrap;
+}
+
+.authorInfoContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  position: absolute;
+  bottom: 5%;
+}
+.authorInfoContainer p {
+  font-size: 1.2rem;
+}
+.authorAvatarContainer {
+  width: 7%;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+}
+.authorAvatarContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
