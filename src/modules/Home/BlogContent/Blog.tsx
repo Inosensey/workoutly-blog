@@ -1,5 +1,5 @@
-import Image from "next/image";
-import styles from "../../../styles/BlogList.module.css";
+import Link from "next/link";
+import styles from "../../../../styles/Home/BlogList.module.css";
 
 function Blog(props: any) {
   return (
@@ -10,11 +10,15 @@ function Blog(props: any) {
       <div className={styles.blogDetailsContainer}>
         <h2>{props.datePublished}</h2>
         <h2>{props.title}</h2>
-        <div
-          className={styles.blogContent}
-          dangerouslySetInnerHTML={{ __html: props.content.html }}
-        ></div>
-        <h3>Read more</h3>
+        <div className={styles.blogContent}>
+          <p>{props.content.text}</p>
+        </div>
+        <Link href={`posts/${props.slug}`}>
+          <h3>
+            Read more <i className="fa-solid fa-angles-right"></i>
+          </h3>
+        </Link>
+
         <div className={styles.authorInfoContainer}>
           <div className={styles.authorAvatarContainer}>
             <img src={props.author.avatar.url} alt="" />

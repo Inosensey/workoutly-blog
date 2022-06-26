@@ -1,20 +1,3 @@
-.container {
-  width: 100%;
-  height: 100vh;
-  background-image: url("../public/img/pexels-scott-webb-140955.jpg");
-  position: relative;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-}
-.overlay {
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: linear-gradient(45deg, #1e292b80, #4f6c6b80);
-}
 .contentContainer {
   z-index: 10;
   color: #fff;

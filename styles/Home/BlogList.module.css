@@ -33,14 +33,15 @@
 
 .blogDetailsContainer h3 {
   cursor: pointer;
+  font-family: "Anton";
+  color: #b6b6b6;
 }
 
 .blogDetailsContainer h3:hover {
   text-decoration: underline;
 }
 
-.blogDetailsContainer h2,
-.blogDetailsContainer h3 {
+.blogDetailsContainer h2 {
   font-family: "Oxygen";
   color: #ff7777;
 }
@@ -55,8 +56,11 @@
   font-family: "Oxygen";
   color: #b6b6b6;
   width: 100%;
-  border: 2px solid magenta;
-  white-space: wrap;
+  height: 31%;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .authorInfoContainer {
@@ -67,11 +71,11 @@
   bottom: 5%;
 }
 .authorInfoContainer p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 .authorAvatarContainer {
-  width: 7%;
-  height: 50px;
+  width: 6%;
+  height: 40px;
   border-radius: 50%;
   border: none;
 }

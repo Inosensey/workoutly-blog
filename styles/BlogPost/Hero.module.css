@@ -1,0 +1,23 @@
+.contentContainer {
+  z-index: 10;
+  color: #ffffff;
+  width: max-content;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.contentContainer h1 {
+  font-size: 6.2rem;
+  font-family: "Oxygen";
+  margin: 0;
+}
+.contentContainer span {
+  font-family: "Anton";
+  background-image: linear-gradient(to bottom, #4f6c6b, #ff7777);
+  background-clip: text;
+  color: transparent;
+}

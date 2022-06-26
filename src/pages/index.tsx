@@ -1,9 +1,9 @@
 import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import { GraphQLClient, gql } from "graphql-request";
-import BlogList from "../modules/BlogContent/BlogList";
-import Hero from "../modules/Hero/Hero";
-import Nav from "../modules/Nav/Nav";
+import BlogList from "../modules/Home/BlogContent/BlogList";
+import Hero from "../modules/Home/Hero/Hero";
+import Nav from "../common/Nav/Nav";
 
 export const getStaticProps: GetStaticProps = async () => {
   // GraphCms
@@ -23,7 +23,7 @@ export const getStaticProps: GetStaticProps = async () => {
           }
         }
         content {
-          html
+          text
         }
         coverPhoto {
           url
