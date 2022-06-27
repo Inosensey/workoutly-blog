@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "../../../../styles/BlogPost/BlogContent.module.css";
 
 function BlogContent(props: any) {
@@ -9,7 +10,10 @@ function BlogContent(props: any) {
       <div className={styles.blogContent}>
         <h1>{props.title}</h1>
         <p className={styles.content}>{props.content.text}</p>
-        <p className={styles.tags}>{props.tags}</p>
+        <Link href={`../tag/${props.tags}`}>
+          <p className={styles.tags}>{props.tags}</p>
+        </Link>
+
         <div className={styles.authorInfoContainer}>
           <div className={styles.authorAvatarContainer}>
             <img src={props.author.avatar.url} alt="" />
