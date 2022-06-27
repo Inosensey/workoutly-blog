@@ -5,32 +5,33 @@ import BlogList from "../modules/Home/BlogContent/BlogList";
 import Hero from "../modules/Home/Hero/Hero";
 import Nav from "../common/Nav/Nav";
 
-export const getStaticProps: GetStaticProps = async () => {
-  // GraphCms
-  const graphcms = new GraphQLClient(
-    "https://api-ap-northeast-1.graphcms.com/v2/cl4m6kpla7bry01xv5pop3nrl/master"
-  );
-  const QUERY = gql`
-    {
-      posts {
-        title
-        datePublished
-        slug
-        author {
-          name
-          avatar {
-            url
-          }
-        }
-        content {
-          text
-        }
-        coverPhoto {
+// GraphCms
+const graphcms = new GraphQLClient(
+  "https://api-ap-northeast-1.graphcms.com/v2/cl4m6kpla7bry01xv5pop3nrl/master"
+);
+const QUERY = gql`
+  {
+    posts {
+      title
+      datePublished
+      slug
+      author {
+        name
+        avatar {
           url
         }
       }
+      content {
+        text
+      }
+      coverPhoto {
+        url
+      }
     }
-  `;
+  }
+`;
+
+export const getStaticProps: GetStaticProps = async () => {
   const { posts } = await graphcms.request(QUERY);
   return {
     props: { posts },

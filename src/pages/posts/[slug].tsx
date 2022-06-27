@@ -5,6 +5,8 @@ import React from "react";
 import Nav from "../../common/Nav/Nav";
 import Hero from "../../modules/BlogPost/Hero/Hero";
 import BlogContent from "../../modules/BlogPost/BlogContent/BlogContent";
+import Comments from "../../modules/BlogPost/BlogContent/Comments";
+import OtherBlogs from "../../modules/BlogPost/BlogContent/OtherBlogs";
 
 //Grapcms
 const graphcms = new GraphQLClient(
@@ -17,6 +19,7 @@ const QUERY = gql`
       title
       datePublished
       slug
+      tags
       author {
         name
         avatar {
@@ -26,6 +29,19 @@ const QUERY = gql`
       content {
         text
       }
+      coverPhoto {
+        url
+      }
+    }
+  }
+`;
+
+const BLOGLISTQUERY = gql`
+  {
+    posts {
+      title
+      datePublished
+      slug
       coverPhoto {
         url
       }
@@ -52,14 +68,15 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async ({ params }: any) => {
   const slug = params.slug;
   const data = await graphcms.request(QUERY, { slug });
+  const { posts } = await graphcms.request(BLOGLISTQUERY);
   const post = data.post;
   return {
-    props: { post },
+    props: { post, posts },
     revalidate: 10,
   };
 };
 
-const BlogPost: NextPage = ({ post }: any) => {
+const BlogPost: NextPage = ({ post, posts }: any) => {
   console.log(post);
   return (
     <div>
@@ -72,6 +89,8 @@ const BlogPost: NextPage = ({ post }: any) => {
         <Nav />
         <Hero />
         <BlogContent {...post} />
+        <OtherBlogs Blogs={posts} />
+        <Comments />
       </main>
     </div>
   );
