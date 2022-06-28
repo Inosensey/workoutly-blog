@@ -120,7 +120,9 @@ function Nav({ onClick }: any) {
         <div className={styles.logoContainer}>
           <Image src="/img/Logo.png" layout="fill" objectFit="contain" alt="" />
         </div>
-        <h2>Workoutly</h2>
+        <Link href="/">
+          <h2>Workoutly</h2>
+        </Link>
       </div>
       <motion.div
         className={styles.overlay}
