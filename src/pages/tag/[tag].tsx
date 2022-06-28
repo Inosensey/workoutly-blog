@@ -3,7 +3,7 @@ import Head from "next/head";
 import { GraphQLClient, gql } from "graphql-request";
 import BlogList from "../../modules/Home/BlogContent/BlogList";
 import Hero from "../../modules/Home/Hero/Hero";
-import Nav from "../../common/Nav/Nav";
+import Nav from "../../common/Nav";
 
 // GraphCms
 const graphcms = new GraphQLClient(

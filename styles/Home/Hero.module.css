@@ -22,3 +22,38 @@
   text-align: justify;
   font-family: "Oxygen";
 }
+
+@media screen and (max-width: 768px) {
+  .contentContainer {
+    width: 70%;
+  }
+  .contentContainer h1 {
+    font-size: 3.5rem;
+  }
+  .contentContainer p {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 478px) {
+  .contentContainer {
+    width: 85%;
+  }
+  .contentContainer h1 {
+    font-size: 3.2rem;
+  }
+  .contentContainer p {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .contentContainer {
+    width: 90%;
+  }
+  .contentContainer h1 {
+    font-size: 2.5rem;
+  }
+  .contentContainer p {
+    font-size: 1rem;
+  }
+}

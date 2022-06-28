@@ -13,7 +13,7 @@ function Blog(props: any) {
         <div className={styles.blogContent}>
           <p>{props.content.text}</p>
         </div>
-        <Link href={`posts/${props.slug}`}>
+        <Link href={`../posts/${props.slug}`}>
           <h3>
             Read more <i className="fa-solid fa-angles-right"></i>
           </h3>

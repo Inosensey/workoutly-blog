@@ -2,7 +2,7 @@ import { NextPage } from "next";
 import { GraphQLClient, gql } from "graphql-request";
 import Head from "next/head";
 import React from "react";
-import Nav from "../../common/Nav/Nav";
+import Nav from "../../common/Nav";
 import Hero from "../../modules/BlogPost/Hero/Hero";
 import BlogContent from "../../modules/BlogPost/BlogContent/BlogContent";
 import Comments from "../../modules/BlogPost/BlogContent/Comments";
