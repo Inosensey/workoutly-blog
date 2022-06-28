@@ -77,7 +77,6 @@ export const getStaticProps = async ({ params }: any) => {
 };
 
 const BlogPost: NextPage = ({ post, posts }: any) => {
-  console.log(post);
   return (
     <div>
       <Head>
