@@ -1,0 +1,160 @@
+.container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.header {
+  text-align: center;
+  width: max-content;
+  margin: 2rem auto 0 auto;
+  font-family: "Oxygen";
+}
+
+.header h1 {
+  color: #ff7777;
+  font-size: 2rem;
+}
+
+.header p {
+  color: #b6b6b6;
+  font-size: 1.2rem;
+}
+
+.authorsContainer {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 2rem 0 0 0;
+}
+
+.authorsInfoContainer {
+  display: flex;
+  flex-direction: column;
+  width: 28%;
+  height: 250px;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  cursor: pointer;
+  box-shadow: 0 0px 3px 0 rgb(0, 0, 0, 0.8);
+  transition: box-shadow 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.authorsInfoContainer:hover {
+  box-shadow: 0 0px 15px 3px rgb(0, 0, 0, 0.6);
+}
+
+.avatarContainer {
+  width: 30%;
+  height: 48%;
+  border-radius: 50%;
+  border: 1px solid #ff7777;
+}
+
+.avatarContainer img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.authorInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.name {
+  color: #ffffff;
+}
+
+.position {
+  color: #ff7777;
+}
+
+.socialMediaAccounts {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: absolute;
+  right: 5%;
+  bottom: 10%;
+  color: #ffffff;
+  overflow: hidden;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: all 0.2s ease-in;
+}
+
+.socialMediaAccounts i:hover {
+  color: #ff7777;
+}
+
+.authorsInfoContainer:hover > .socialMediaAccounts {
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+.backButton {
+  position: absolute;
+  color: #666666;
+  font-size: 2rem;
+  top: 2%;
+  left: 3%;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 968px) {
+  .authorsInfoContainer {
+    width: 35%;
+  }
+  .avatarContainer {
+    width: 50%;
+    height: 48%;
+    border-radius: 50%;
+    border: 1px solid #ff7777;
+  }
+
+  .avatarContainer img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    margin: 3rem auto 0 auto;
+  }
+
+  .header h1 {
+    font-size: 1.8rem;
+  }
+
+  .header p {
+    color: #b6b6b6;
+    font-size: 1rem;
+  }
+  .authorsContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .authorsInfoContainer {
+    width: 90%;
+  }
+  .avatarContainer {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 468px) {
+  .avatarContainer {
+    width: 40%;
+  }
+}
