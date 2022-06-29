@@ -71,7 +71,7 @@ export const Authors: NextPage = (authors: any) => {
                 onMouseLeave={() => ToggleSocialMediaAccounts.start("hidden")}
               >
                 <div className={styles.avatarContainer}>
-                  <img src={author.avatar.url} />
+                  <img src={author.avatar.url} alt="" />
                 </div>
                 <div className={styles.authorInfo}>
                   <p className={styles.name}>{author.name}</p>
