@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useEffect, useLayoutEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
-import styles from "../../styles/Nav.module.css";
+import styles from "../../styles/nav.module.css";
 import Link from "next/link";
 
 function Nav({ onClick }: any) {
