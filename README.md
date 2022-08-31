@@ -22,10 +22,10 @@ A simple Blog site for a made up fitness organization called Workoutly.
 
 1. Workoutly E-commerce\
    Live Demo:\
-   [link text itself]: https://workoutly-ecommerce.vercel.app/
+   https://workoutly-ecommerce.vercel.app/
 2. Workoutly Landing Page\
    Live Demo:\
-   [link text itself]: https://workoutly-landing-page.vercel.app/
+   https://workoutly-landing-page.vercel.app/
 
 ## Future projects
 
