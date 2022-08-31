@@ -20,14 +20,18 @@ A simple Blog site for a made up fitness organization called Workoutly.
 
 ## Other projects related to the Workoutly Organization
 
-1. Workoutly E-commerce\
-   Live Demo:\
-   https://workoutly-ecommerce.vercel.app/
-2. Workoutly Landing Page\
-   Live Demo:\
-   https://workoutly-landing-page.vercel.app/
+### 1. Workoutly E-commerce\
+
+Live Demo:\
+ https://workoutly-ecommerce.vercel.app/
+
+### 2. Workoutly Landing Page\
+
+Live Demo:\
+ https://workoutly-landing-page.vercel.app/
 
 ## Future projects
 
-1. Exercise Tracker
-2. Admin panel for the Workoutly E-commerce
+### 1. Exercise Tracker
+
+### 2. Admin panel for the Workoutly E-commerce
