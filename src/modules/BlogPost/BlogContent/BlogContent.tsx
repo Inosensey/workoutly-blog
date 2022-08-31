@@ -1,7 +1,8 @@
 import Link from "next/link";
 import styles from "../../../../styles/BlogPost/BlogContent.module.css";
+import { PostInfoType } from "../Typescript/Types";
 
-function BlogContent(props: any) {
+function BlogContent(props: PostInfoType) {
   return (
     <section className={styles.container}>
       <div className={styles.coverPhotoContainer}>

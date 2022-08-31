@@ -4,6 +4,7 @@ import { GraphQLClient, gql } from "graphql-request";
 import BlogList from "../../modules/Home/BlogContent/BlogList";
 import Hero from "../../modules/Tag/Hero";
 import Nav from "../../common/Nav";
+import { BlogType } from "../../Typescript/ReusableTypes";
 
 // GraphCms
 const graphcms = new GraphQLClient(
@@ -38,6 +39,14 @@ const TAGLIST = gql`
     }
   }
 `;
+interface Props {
+  posts: BlogType[];
+}
+interface Params {
+  params: {
+    tag: string;
+  };
+}
 
 export const getStaticPaths = async () => {
   const { posts } = await graphcms.request(TAGLIST);
@@ -47,7 +56,7 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async ({ params }: any) => {
+export const getStaticProps = async ({ params }: Params) => {
   const tag = params.tag;
   const data = await graphcms.request(QUERY, { tag });
   const posts = data.posts;
@@ -57,7 +66,7 @@ export const getStaticProps = async ({ params }: any) => {
   };
 };
 
-const TagPage: NextPage = ({ posts }: any) => {
+const TagPage: NextPage<Props> = ({ posts }) => {
   return (
     <div>
       <Head>

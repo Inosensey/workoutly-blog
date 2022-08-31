@@ -1,12 +1,13 @@
 import Link from "next/link";
 import styles from "../../../../styles/BlogPost/OtherBlogs.module.css";
+import { PostListType } from "../Typescript/Types";
 
-function OtherBlogs({ Blogs }: any) {
+function OtherBlogs(params: { Blogs: PostListType[] }) {
   return (
     <section className={styles.container}>
       <h3>Explore other blogs</h3>
       <div className={styles.blogList}>
-        {Blogs.map((data: any) => (
+        {params.Blogs.map((data: PostListType) => (
           <div key={Math.random() * 1000} className={styles.blog}>
             <div className={styles.coverPhotoContainer}>
               <img src={data.coverPhoto.url} alt="" />

@@ -7,6 +7,10 @@ import Hero from "../../modules/BlogPost/Hero/Hero";
 import BlogContent from "../../modules/BlogPost/BlogContent/BlogContent";
 import Comments from "../../modules/BlogPost/BlogContent/Comments";
 import OtherBlogs from "../../modules/BlogPost/BlogContent/OtherBlogs";
+import {
+  PostInfoType,
+  PostListType,
+} from "../../modules/BlogPost/Typescript/Types";
 
 //Grapcms
 const graphcms = new GraphQLClient(
@@ -57,6 +61,16 @@ const SLUGLIST = gql`
   }
 `;
 
+interface Params {
+  params: {
+    slug: string;
+  };
+}
+interface Props {
+  post: PostInfoType;
+  posts: PostListType[];
+}
+
 export const getStaticPaths = async () => {
   const { posts } = await graphcms.request(SLUGLIST);
   return {
@@ -65,7 +79,7 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async ({ params }: any) => {
+export const getStaticProps = async ({ params }: Params) => {
   const slug = params.slug;
   const data = await graphcms.request(QUERY, { slug });
   const { posts } = await graphcms.request(BLOGLISTQUERY);
@@ -76,7 +90,7 @@ export const getStaticProps = async ({ params }: any) => {
   };
 };
 
-const BlogPost: NextPage = ({ post, posts }: any) => {
+const BlogPost: NextPage<Props> = ({ post, posts }) => {
   return (
     <div>
       <Head>

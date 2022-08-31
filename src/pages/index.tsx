@@ -4,6 +4,7 @@ import { GraphQLClient, gql } from "graphql-request";
 import BlogList from "../modules/Home/BlogContent/BlogList";
 import Hero from "../modules/Home/Hero/Hero";
 import Nav from "../common/Nav";
+import { BlogType } from "../Typescript/ReusableTypes";
 
 // GraphCms
 const graphcms = new GraphQLClient(
@@ -39,7 +40,11 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const Home: NextPage = ({ posts }: any) => {
+interface Props {
+  posts: BlogType[];
+}
+
+const Home: NextPage<Props> = ({ posts }) => {
   return (
     <div>
       <Head>

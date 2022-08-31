@@ -1,7 +1,8 @@
 import Link from "next/link";
 import styles from "../../../../styles/Home/BlogList.module.css";
+import { BlogType } from "../../../Typescript/ReusableTypes";
 
-function Blog(props: any) {
+function Blog(props: BlogType) {
   return (
     <div className={styles.blogContainer}>
       <div className={styles.coverPhotoContainer}>

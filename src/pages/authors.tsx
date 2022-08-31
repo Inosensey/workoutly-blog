@@ -21,6 +21,16 @@ const QUERY = gql`
     }
   }
 `;
+interface AuthorInfo {
+  name: string;
+  position: string;
+  avatar: {
+    url: string;
+  };
+}
+interface Author {
+  authors: AuthorInfo[];
+}
 
 export const getStaticProps = async () => {
   const { authors } = await graphcms.request(QUERY);
@@ -30,7 +40,7 @@ export const getStaticProps = async () => {
   };
 };
 
-export const Authors: NextPage = (authors: any) => {
+export const Authors: NextPage<Author> = (authors) => {
   // Framer-motion
   const ToggleSocialMediaAccounts = useAnimation();
 
@@ -63,7 +73,7 @@ export const Authors: NextPage = (authors: any) => {
             <p>The most educational and talented individuals</p>
           </div>
           <div className={styles.authorsContainer}>
-            {authors.authors.map((author: any) => (
+            {authors.authors.map((author: AuthorInfo) => (
               <div
                 key={Math.random() * 1000}
                 className={styles.authorsInfoContainer}
